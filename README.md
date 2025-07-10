@@ -28,19 +28,15 @@ ReliefNet is a comprehensive Java-based disaster relief management system specif
 
 2. **👨‍🚒 Volunteer Interface**: 
    - Personal volunteer dashboard with task assignments
-   - Resource request and donation management
+   - Respond to request and tracking
    - Communication with authorities and survivors
-   - Activity tracking and reporting tools
 
 3. **🆘 Survivor Interface**: 
    - Emergency request submission with location tracking
    - Real-time communication with rescue teams
-   - Resource needs reporting and status updates
-   - Family safety check-in and notification system
 
 4. **⏳ Non-approved Volunteer Interface**: 
    - Registration and verification portal
-   - Skills assessment and training modules
    - Limited access to non-critical volunteer activities
    - Application status tracking and updates
 
@@ -51,8 +47,6 @@ ReliefNet is a comprehensive Java-based disaster relief management system specif
 - **👥 Volunteer Coordination**: Comprehensive volunteer management system with skills matching and deployment optimization
 - **💬 Real-Time Communication**: Direct communication channels between all user types with message encryption and delivery confirmation
 - **☁️ Cloud Synchronization**: Automatic data sync when connectivity is restored with conflict resolution and backup systems
-- **📊 Analytics & Reporting**: Comprehensive reporting tools for disaster response analysis and performance metrics
-- **🗺️ Geographic Information System**: Interactive mapping with location-based services and GPS tracking
 - **📱 Mobile-First Design**: Responsive interface optimized for various devices and screen sizes
 
 ## 🛠️ Technology Stack
