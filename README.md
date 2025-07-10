@@ -140,26 +140,6 @@ We welcome contributions from the community! Here's how you can help:
 - Update documentation for any new functionality
 - Ensure compatibility with existing offline capabilities
 
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🆘 Support & Contact
-
-- **🐛 Bug Reports**: [Create an Issue](https://github.com/yourusername/ReliefNet/issues)
-- **💡 Feature Requests**: [Create an Issue](https://github.com/yourusername/ReliefNet/issues)
-- **📧 Email**: support@reliefnet.com
-- **💬 Discussions**: [GitHub Discussions](https://github.com/yourusername/ReliefNet/discussions)
-
-## 🏆 Acknowledgments
-
-- **🇧🇩 Bangladesh Government** for disaster management guidelines
-- **🌍 International disaster relief organizations** for best practices
-- **👥 Open source community** for amazing libraries and tools
-- **🧪 Beta testers** for valuable feedback and testing
-
----
-
 <div align="center">
   <strong>🚨 ReliefNet - Saving Lives Through Technology 🚨</strong>
   <br>
