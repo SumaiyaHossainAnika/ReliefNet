@@ -5,7 +5,6 @@
 [![JavaFX](https://img.shields.io/badge/JavaFX-17+-blue.svg)](https://openjfx.io/)
 [![Maven](https://img.shields.io/badge/Maven-3.6+-red.svg)](https://maven.apache.org/)
 [![Firebase](https://img.shields.io/badge/Firebase-Enabled-yellow.svg)](https://firebase.google.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ReliefNet is a comprehensive Java-based disaster relief management system specifically designed for Bangladesh's unique challenges. With robust online and offline capabilities, the platform features four specialized interfaces (Authority, Volunteer, Survivor, and Non-approved Volunteer) protected by enterprise-grade security measures including email verification, two-factor authentication, and role-based access controls. The system efficiently manages resources, emergency requests, volunteer coordination, and real-time communication between survivors and authorities, providing a secure and resilient solution for strengthening disaster response in challenging environments.
 
