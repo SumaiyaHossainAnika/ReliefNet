@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.reliefnet</groupId>
+    <artifactId>reliefnet</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>ReliefNet</name>
+    <description>JavaFX Disaster Relief System for Bangladesh</description>    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javafx.version>17.0.2</javafx.version>
+        <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
+        <maven.compiler.showWarnings>false</maven.compiler.showWarnings>
+        <maven.compiler.showDeprecation>false</maven.compiler.showDeprecation>
+    </properties>
+
+    <dependencies>
+        <!-- JavaFX Dependencies -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        
+        <!-- JavaFX Base (explicitly included to resolve warnings) -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        
+        <!-- UI Enhancement Libraries -->
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>11.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jfoenix</groupId>
+            <artifactId>jfoenix</artifactId>
+            <version>9.0.10</version>
+        </dependency>
+        
+        <!-- Icon Libraries -->
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-javafx</artifactId>
+            <version>12.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-fontawesome5-pack</artifactId>
+            <version>12.3.1</version>
+        </dependency>
+        
+        <!-- Utility Libraries -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.42.0.0</version>
+        </dependency>
+        
+        <!-- Networking Dependencies for Real-time Sync -->
+        <dependency>
+            <groupId>org.java-websocket</groupId>
+            <artifactId>Java-WebSocket</artifactId>
+            <version>1.5.3</version>
+        </dependency>
+        
+        <!-- HTTP Client for REST API calls -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.11.0</version>
+        </dependency>
+        
+        <!-- Network Service Discovery -->
+        <dependency>
+            <groupId>org.jmdns</groupId>
+            <artifactId>jmdns</artifactId>
+            <version>3.5.8</version>
+        </dependency>
+        
+        <!-- Firebase Admin SDK for cloud sync -->
+        <dependency>
+            <groupId>com.google.firebase</groupId>
+            <artifactId>firebase-admin</artifactId>
+            <version>9.2.0</version>
+        </dependency>
+        
+        <!-- Jackson for JSON processing -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.2</version>
+        </dependency>
+        
+        <!-- JavaMail API for email verification -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        
+        <!-- Network utilities -->
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.9.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                    <fork>true</fork>
+                    <meminitial>512m</meminitial>
+                    <maxmem>2048m</maxmem>
+                    <compilerArgs>
+                        <arg>--add-exports</arg>
+                        <arg>java.base/sun.nio.ch=ALL-UNNAMED</arg>
+                        <arg>--add-opens</arg>
+                        <arg>java.base/java.lang=ALL-UNNAMED</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>${javafx.maven.plugin.version}</version>
+                <configuration>
+                    <mainClass>com.reliefnet.app.ReliefNetApp</mainClass>
+                    <jvmArgs>
+                        <jvmArg>-Xms512m</jvmArg>
+                        <jvmArg>-Xmx2048m</jvmArg>
+                        <jvmArg>-XX:+UseG1GC</jvmArg>
+                        <jvmArg>-XX:MaxGCPauseMillis=200</jvmArg>
+                        <jvmArg>-Djava.awt.headless=false</jvmArg>
+                        
+                        <!-- Suppress module warnings -->
+                        <jvmArg>--add-exports</jvmArg>
+                        <jvmArg>java.base/sun.nio.ch=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-exports</jvmArg>
+                        <jvmArg>java.desktop/sun.awt=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-exports</jvmArg>
+                        <jvmArg>java.desktop/com.sun.java.swing.plaf.nimbus=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-exports</jvmArg>
+                        <jvmArg>java.base/sun.security.util=ALL-UNNAMED</jvmArg>
+                        
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.base/java.lang=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.base/java.lang.reflect=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.base/java.text=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.desktop/java.awt=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.desktop/java.awt.font=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.desktop/sun.awt=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.desktop/sun.java2d=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>javafx.controls/com.sun.javafx.scene.control.behavior=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>javafx.controls/com.sun.javafx.scene.control=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>javafx.base/com.sun.javafx.binding=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>javafx.base/com.sun.javafx.event=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>javafx.graphics/com.sun.javafx.css=ALL-UNNAMED</jvmArg>
+                        
+                        <!-- Suppress illegal reflective access warnings -->
+                        <jvmArg>-XX:+IgnoreUnrecognizedVMOptions</jvmArg>
+                        <jvmArg>--illegal-access=permit</jvmArg>
+                    </jvmArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.reliefnet.app.ReliefNetApp</mainClass>
+                    <jvmArgs>
+                        <jvmArg>-Xms512m</jvmArg>
+                        <jvmArg>-Xmx2048m</jvmArg>
+                        <jvmArg>-XX:+UseG1GC</jvmArg>
+                        <jvmArg>-XX:MaxGCPauseMillis=200</jvmArg>
+                        <jvmArg>-Djava.awt.headless=false</jvmArg>
+                        
+                        <!-- Suppress module warnings -->
+                        <jvmArg>--add-exports</jvmArg>
+                        <jvmArg>java.base/sun.nio.ch=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-exports</jvmArg>
+                        <jvmArg>java.desktop/sun.awt=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-exports</jvmArg>
+                        <jvmArg>java.desktop/com.sun.java.swing.plaf.nimbus=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-exports</jvmArg>
+                        <jvmArg>java.base/sun.security.util=ALL-UNNAMED</jvmArg>
+                        
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.base/java.lang=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.base/java.lang.reflect=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.base/java.text=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.desktop/java.awt=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.desktop/java.awt.font=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.desktop/sun.awt=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>java.desktop/sun.java2d=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>javafx.controls/com.sun.javafx.scene.control.behavior=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>javafx.controls/com.sun.javafx.scene.control=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>javafx.base/com.sun.javafx.binding=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>javafx.base/com.sun.javafx.event=ALL-UNNAMED</jvmArg>
+                        <jvmArg>--add-opens</jvmArg>
+                        <jvmArg>javafx.graphics/com.sun.javafx.css=ALL-UNNAMED</jvmArg>
+                        
+                        <!-- Suppress illegal reflective access warnings -->
+                        <jvmArg>-XX:+IgnoreUnrecognizedVMOptions</jvmArg>
+                        <jvmArg>--illegal-access=permit</jvmArg>
+                    </jvmArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
